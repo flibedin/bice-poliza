@@ -5,11 +5,6 @@ var router = express.Router();
 
 const url_poliza = 'https://dn8mlk7hdujby.cloudfront.net/interview/insurance/policy'
 
-// round float to 3 decimals
-function round_float(number){
-    return Math.round( number * 1e3 ) / 1e3;
-}
-
 function get_life_policy_cost(childrens){
     const cost_life_policy = [0.279, 0.4396, 0.5599];
 
@@ -52,8 +47,8 @@ function get_policy_cost(company){
 
     // return dictionary with company and employee cost
     return {
-        'Costo Empresa': round_float(company_cost),
-        'Costo por Empleado': round_float(employee_cost),
+        'Costo Empresa': company_cost.toFixed(3),
+        'Costo por Empleado': employee_cost.toFixed(3),
         'Numero de empleados': n_employees
     }
 }
