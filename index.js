@@ -75,7 +75,7 @@ app.get('/', function(req, res) {
 });
 
 app.listen(3001, function() {
-    console.log("My API is running on port 3001...:" + "http://localhost:3001");
+    console.log("API running on port 3001...:" + "http://localhost:3001");
 });
 
 module.exports = router;
